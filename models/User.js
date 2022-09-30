@@ -1,0 +1,1 @@
+const {Schema, Type, model} = require('mongoose')
