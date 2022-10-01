@@ -1,50 +1,51 @@
-const {Schema, Types, model} = require('mongoose');
+const { Schema, Types, model } = require("mongoose");
 
-const userSchema = new Schema({
+const userSchema = new Schema(
+  {
     username: {
-        type: String,
-        unique: true,
-        required: [true, "An username is required"],
-        trim: true
+      type: String,
+      unique: true,
+      required: [true, "An username is required"],
+      trim: true,
     },
     email: {
-        type: String,
-        required: [true, "An email address is required"],
-        unique: true,
-        validate: {
-            validator: (v) => {
-                return /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/.test(v)
-            },
-            message: props => {
-                return `${props.value} is not a valid email address!`
-            }
-        }
+      type: String,
+      required: [true, "An email address is required"],
+      unique: true,
+      validate: {
+        validator: (v) => {
+          return /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/.test(v);
+        },
+        message: (props) => {
+          return `${props.value} is not a valid email address!`;
+        },
+      },
     },
     thoughts: [
-        {
-            type: Schema.Types.ObjectId,
-            ref: 'Thought'
-        }
+      {
+        type: Schema.Types.ObjectId,
+        ref: "Thought",
+      },
     ],
     friends: [
-        {
-            type: Schema.Types.ObjectId,
-            ref: 'User'
-        }
-    ]
-},
-{
+      {
+        type: Schema.Types.ObjectId,
+        ref: "User",
+      },
+    ],
+  },
+  {
     toJSON: {
-        virtuals: true
+      virtuals: true,
     },
-    id: false 
-}
-)
+    id: false,
+  }
+);
 
-userSchema.virtual('friendCount').get(function() {
-    return this.friends.length;
-})
+userSchema.virtual("friendCount").get(function () {
+  return this.friends.length;
+});
 
-const User = model('User', userSchema)
+const User = model("User", userSchema);
 
-module.exports = User
+module.exports = User;
