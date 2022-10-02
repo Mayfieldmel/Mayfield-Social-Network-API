@@ -34,7 +34,7 @@ const thoughtController = {
   },
 
   // add thought
-  addThought({ params, body }, res) {
+  createThought({ params, body }, res) {
     Thought.create(body)
       // expects: {"thoughtText": "Here's a cool thought...", "username": "lernantino"}
       .then(({_id}) => {
