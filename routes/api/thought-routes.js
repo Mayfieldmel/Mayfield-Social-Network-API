@@ -26,10 +26,10 @@ router
     .put(updateThought)
     .delete(deleteThought)
 
-// PUT(add) reaction at /api/thoughts/thoughtId/reactions
+// POST reaction at /api/thoughts/thoughtId/reactions
 router
     .route("/:thoughtId/reactions")
-    .put(addReaction)
+    .post(addReaction)
 
 // DELETE reaction at /api/thoughts/thoughtId/reactions/reactionId
 router
