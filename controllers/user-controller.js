@@ -80,11 +80,10 @@ const userController = {
     User.findOneAndDelete({ _id: params.id })
       .then((dbUserData) => {
         // if no user is found, send 404
-        if (!dbUserData) {
-          res.status(404).json({ message: "No user found with this id!" });
-          return;
+        if (dbUserData.thoughts.length) {
+           Thought.deleteMany({userId: params.id}, () => {return})
         }
-        return Thought.deleteMany({userId: params.id})
+        res.json(dbUserData)
       })
       .catch((err) => {
         console.log(err);
