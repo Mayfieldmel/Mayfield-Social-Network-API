@@ -34,12 +34,12 @@ const thoughtController = {
   },
 
   // add thought
-  createThought({ params, body }, res) {
+  createThought({ body }, res) {
     Thought.create(body)
-      // expects: {"thoughtText": "Here's a cool thought...", "username": "lernantino"}
-      .then(({_id}) => {
+      // expects: {"thoughtText": "Here's a cool thought...", "username": "lernantino", "userId": "5edff358a0fcb779aa7b118b"}
+      .then(({_id, userId}) => {
         return User.findOneAndUpdate(
-          { _id: params.userId },
+          { _id: userId },
           { $push: { thoughts: _id } },
           { new: true, runValidators: true }
         );

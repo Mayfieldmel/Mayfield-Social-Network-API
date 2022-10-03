@@ -13,10 +13,6 @@ const {
 router
     .route("/")
     .get(getAllThoughts)
-
-// POST at /api/thoughts/userId
-router
-    .route("/:userId")
     .post(createThought)
 
 // GET, PUT, & DELETE one at /api/thoughts/id
