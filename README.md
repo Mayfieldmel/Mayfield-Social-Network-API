@@ -23,7 +23,7 @@ The Mayfield Social Network API provides a back-end server, controls, and databa
 Clone the repo to your local desktop. Then run `npm init -y`, `npm i express`, and `npm i mongoose`.
 
 ## Usage
-Watch full length demo at:
+Watch full length demo at: [https://watch.screencastify.com/v/Wr9x84HdAV1NUT3g4fzM](https://watch.screencastify.com/v/Wr9x84HdAV1NUT3g4fzM)
 
 ## Credits
 
