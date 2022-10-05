@@ -2,7 +2,7 @@
 
 This repo houses the code used to build the Mayfield Social Network API.
 
-![Mayfield-Social-Network-API-screenshot](./assets/images/mayfield-tech-blog-screenshot.png)
+![Mayfield-Social-Network-API-screenshot](./assets/images/insomnia-demo.gif)
 
 ## The Social Network API
 
@@ -20,7 +20,7 @@ The Mayfield Social Network API provides a back-end server, controls, and databa
 
 ## Installation
 
-Clone the repo to your local desktop. Then run `npm init -y`, `npm i express`, and `npm i mongoose`.
+Clone the repo to your local desktop. Then run `npm init -y`, `npm i express`, and `npm i mongoose`. To start server and run app enter `npm start` into the terminal/CLI.
 
 ## Usage
 Watch full length demo at: [https://watch.screencastify.com/v/xhscB0hwSGJ0LbevxKsh](https://watch.screencastify.com/v/xhscB0hwSGJ0LbevxKsh)
